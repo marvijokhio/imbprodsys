@@ -1,0 +1,72 @@
+<div mat-dialog-title>
+    <h1>Product Form</h1>
+    <h4>Fields with asterisk symbol (*) are required fields.</h4>
+</div>
+<form [formGroup]="prodForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Product Name</mat-label>
+                <input matInput type="text" formControlName="productName">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Product Owner Name</mat-label>
+                <input matInput type="text" formControlName="productOwnerName">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <label>Developers:</label>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Developer 1:</mat-label>
+                <input matInput type="text" formControlName="developer1">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Developer 2:</mat-label>
+                <input matInput type="text" formControlName="developer2">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Developer 3:</mat-label>
+                <input matInput type="text" formControlName="developer3">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Developer 4:</mat-label>
+                <input matInput type="text" formControlName="developer4">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Developer 5:</mat-label>
+                <input matInput type="text" formControlName="developer5">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Choose start date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="startDate">
+                <mat-hint>YYYY/MM/DD</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Scrum Master Name</mat-label>
+                <input matInput type="text" formControlName="scrumMasterName">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" formControlName="methodology">
+                <mat-label>Methodology *: </mat-label>
+                <mat-radio-button value="Agile">Agile</mat-radio-button>
+                <mat-radio-button value="Waterfall">Waterfall</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+    </div>
+    <div matDialogActions class="action">
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update': 'Save'}}</button>
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    </div>
+</form>

@@ -1,0 +1,207 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Information Management Branch (Products API)",
+        "description": "IMB Product Management Application API",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "/api/",
+    "tags": [
+        {
+            "name": "Products",
+            "description": "API for products in the IMB product management system"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/add-product": {
+            "post": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Create a new product.",
+                "description": "Create new product in the IMB product management system",
+                "parameters": [
+                    {
+                        "name": "product",
+                        "in": "body",
+                        "description": "Product to be created.",
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A new product is created in the IMB product management system",
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    }
+                }
+            }
+        },
+        "/products": {
+            "get": {
+                "tags": [
+                    "Products"
+                ],
+                "description": "Get all products in the IMB product management system",
+                "summary": "Get all products.",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/products/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of product to be found....",
+                    "type": "string",
+                    "format": "uuid"
+                }
+            ],
+            "delete": {
+                "summary": "Delete a product with given id.",
+                "tags": [
+                    "Products"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Product is deleted from IMB product management system",
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update product with given id.",
+                "tags": [
+                    "Products"
+                ],
+                "parameters": [
+                    {
+                        "name": "product",
+                        "in": "body",
+                        "description": "Product with new values of properties",
+                        "schema": {
+                            "$ref": "#/definitions/updateProduct"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Product is updated",
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Product": {
+            "required": [
+                "productId",
+                "productName",
+                "productOwnerName",
+                "developers",
+                "scrumMasterName",
+                "startDate",
+                "methodology"
+            ],
+            "properties": {
+                "productId": {
+                    "type": "string",
+                    "format": "uuid",
+                    "uniqueItems": true
+                },
+                "productName": {
+                    "type": "string"
+                },
+                "productOwnerName": {
+                    "type": "string"
+                },
+                "developers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "example": ["str1", "str2", "str3"]
+                },
+                "scrumMasterName": {
+                    "type": "string"
+                },
+                "startDate": {
+                    "type": "string"
+                },
+                "methodology": {
+                    "type": "string"
+                }
+            }
+        },
+        "updateProduct": {
+            "required": [
+                "productId",
+                "productName",
+                "productOwnerName",
+                "developers",
+                "scrumMasterName",
+                "startDate",
+                "methodology"
+            ],
+            "properties": {
+                "productName": {
+                    "type": "string"
+                },
+                "productOwnerName": {
+                    "type": "string"
+                },
+                "developers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "example": ["str1", "str2", "str3"]
+                },
+                "scrumMasterName": {
+                    "type": "string"
+                },
+                "startDate": {
+                    "type": "string"
+                },
+                "methodology": {
+                    "type": "string"
+                }
+            }
+        },
+        "Products": {
+            "type": "array",
+            "$ref": "#/definitions/Product"
+
+        }
+    }
+}

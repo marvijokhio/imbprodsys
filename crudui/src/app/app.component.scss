@@ -1,0 +1,38 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.main-body{
+  padding-top: 20px;
+  max-width: 1248px;
+  margin: 0 auto;
+  mat-form-field{
+    width: 100%;
+  }
+}
+
+.mat-column{
+  padding: 5px;
+}
+
+.mat-column-productId {
+  max-width: 150px;
+}
+
+.mat-column-developers{
+  max-width: 300px;
+}
+
+
+.mat-cell{
+  padding: 10px;
+}
+.mat-header-cell{
+  padding: 10px;
+}
+
+.center-title{
+  margin-left: 40%;
+  width: auto;
+  padding: 10px;
+}
