@@ -10,11 +10,8 @@ This GitHub repository contains a project for creating a web application system 
 4. Package Manager -> npm 9.5.0
 
 # Installation
-To get started, you can clone this repository by running the following command in your terminal: 
+To get started, first clone this repository into your local system
 
-```
-git clone https://github.com/marvijokhio/imbprodsys.git
-```
 # Dependencies
 
 This project has a few dependencies that need to be installed before it can run. You can install these dependencies with the following command: 
