@@ -10,11 +10,14 @@ This GitHub repository contains a project for creating a web application system 
 4. Package Manager -> npm 9.5.0
 
 # Installation
-To get started, first clone this repository into your local system
+To get started, you can clone this repository by running the following command in your terminal:
+```
+git clone https://github.com/marvijokhio/imbprodsys.git
+```
+Now, Please, follow the steps from installing dependencies to running the application for smooth operation.
 
 # Dependencies
-
-This project has a few dependencies that need to be installed before it can run. You can install these dependencies with the following command: 
+This project has a few dependencies that need to be installed before it can run. Therefore, run the following commands one by one in your terminal. 
 ```
 cd IMBProdSys/backend
 npm install
@@ -24,7 +27,9 @@ npm install
 cd ..
 npm install
 ```
-
+Note: In VS Code a popup may appear asking for 
+The git repository at "e:\somepath\imbprodsys" has too many active changes, only a subset of Git features will be enabled. Would you like to add "node_modules" to .gitignore? 
+So Click on Yes and hit enter ..
 
 # Running the Application
 Once you have installed all the dependencies, you can run the application by using the following procedure:
@@ -32,7 +37,7 @@ Once you have installed all the dependencies, you can run the application by usi
 1. Open terminal and go to backend of the project direcotry using commmand;  
 
 ```
-cd IMBProdSys/backend
+cd backend
 ```
 now, type
 ```
@@ -51,5 +56,6 @@ ng serve
 ```
 the applications frontend should be running and available at http://localhost:4200 in your browser. The frontend would be have access to the backend server using cors. 
 
-If there is no error in running the application. You can go and have a look at my application as well as the documentation.
+If there is no error in running the application. You can go and have a look at my application as well as the documentation http://localhost:3000/api/api-docs/
+
 Otherwise, the application's recorded video is available at https://youtu.be/0j5S3Dfvgdo
